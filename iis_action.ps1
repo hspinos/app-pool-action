@@ -12,10 +12,6 @@ Param(
     [SecureString]$password
 )
 
-Get-Module -ListAvailable -Name PSWSMan
-Install-WSMan
-   
-
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
 
@@ -35,6 +31,8 @@ $credential = [PSCredential]::new($user_id, $password)
 $so = New-PSSessionOption -SkipCACheck -SkipCNCheck
 
 $script = {
+    Get-Module -ListAvailable -Name PSWSMan
+    Install-WSMan
     # Relies on WebAdministration Module being installed on the remote server
     # This should be pre-installed on Windows 2012 R2 and later
     # https://docs.microsoft.com/en-us/powershell/module/?term=webadministration
