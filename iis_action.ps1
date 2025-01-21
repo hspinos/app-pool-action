@@ -28,7 +28,7 @@ Write-Output "IIS $display_action"
 Write-Output "Server: $server - App Pool: $app_pool_name"
 
 $credential = [PSCredential]::new($user_id, $password)
-$so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+$so = New-PSSessionOption -SkipCACheck -SkipCNCheck
 
 $script = {
     # Relies on WebAdministration Module being installed on the remote server
