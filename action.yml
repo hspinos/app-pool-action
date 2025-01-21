@@ -25,7 +25,7 @@ runs:
   steps:
     - name: Action
       id: action
-      shell: powershell
+      shell: pwsh
       run: |
         $password_string = @'
         ${{ inputs.service-account-password }}
