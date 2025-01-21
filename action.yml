@@ -23,6 +23,12 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Install WSMan
+      id: install-wsman
+      run: |
+        pwsh -Command 'Install-Module -Name PSWSMan'
+        sudo pwsh -Command 'Install-WSMan'
+ 
     - name: Action
       id: action
       shell: pwsh
