@@ -13,7 +13,7 @@ Param(
 )
 
 Get-Module -ListAvailable -Name PSWSMan
-Install-Module -Name PSWSMan -Force -SkipPublisherCheck
+Install-WSMan
    
 
 $display_action = 'App Pool'
