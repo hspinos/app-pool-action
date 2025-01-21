@@ -12,8 +12,8 @@ Param(
     [SecureString]$password
 )
 
-# Get-Module -ListAvailable -Name PSWSMan
-# Install-WSMan
+Get-Module -ListAvailable -Name PSWSMan
+Install-WSMan
 
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
