@@ -13,7 +13,7 @@ Param(
 )
 
 Get-Module -ListAvailable -Name PSWSMan
-# Install-WSMan
+Install-Module -Name PSWSMan -Force
 Import-Module -Name PSWSMan
 Enable-PSRemoting -Force 
 
