@@ -13,7 +13,9 @@ Param(
 )
 
 Get-Module -ListAvailable -Name PSWSMan
-Install-Module -Name PSWSMan
+# Install-WSMan
+Import-Module -Name PSWSMan
+Enable-PSRemoting -Force 
 
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
