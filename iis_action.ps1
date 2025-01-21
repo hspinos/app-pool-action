@@ -12,6 +12,10 @@ Param(
     [SecureString]$password
 )
 
+Get-Module -ListAvailable -Name PSWSMan
+Install-Module -Name PSWSMan -Force -SkipPublisherCheck
+   
+
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
 
