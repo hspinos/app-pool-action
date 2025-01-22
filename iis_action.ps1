@@ -12,20 +12,8 @@ Param(
     [SecureString]$password
 )
 
-Install-Module -Name PSWSMan -Scope CurrentUser -Force -AllowClobber
-Import-Module -Name PSWSMan
-
-# Output information about WSMan
-Write-Output "Checking for access to WSMan on $server..."
-
-try {
-    $wsmanInfo = Test-WSMan -ComputerName $server -ErrorAction Stop
-    Write-Output "WSMan is accessible on $server."
-    Write-Output "WSMan location: $($wsmanInfo.WSManFault.Detail)."
-} catch {
-    Write-Output "Failed to access WSMan on $server. Error details: $_"
-    throw $_
-}
+Get-Module -ListAvailable -Name PSWSMan
+Install-WSMan
 
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
