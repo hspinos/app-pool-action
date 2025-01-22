@@ -12,8 +12,7 @@ Param(
     [SecureString]$password
 )
 
-Get-Module -ListAvailable -Name PSWSMan
-Install-WSMan
+Install-Module -Name PSWSMan -Scope CurrentUser -Force -AllowClobber
 
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
