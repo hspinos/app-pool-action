@@ -13,6 +13,7 @@ Param(
 )
 
 Install-Module -Name PSWSMan -Scope CurrentUser -Force -AllowClobber
+Import-Module -Name PSWSMan
 
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
