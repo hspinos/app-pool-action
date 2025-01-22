@@ -12,6 +12,7 @@ Param(
     [SecureString]$password
 )
 
+Enable-PSRemoting -Force
 Get-Module -ListAvailable -Name PSWSMan
 Install-Module PSWSMan -Force
 
