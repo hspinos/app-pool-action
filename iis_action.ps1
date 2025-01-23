@@ -12,9 +12,9 @@ Param(
     [SecureString]$password
 )
 
-Enable-PSRemoting -Force
-Get-Module -ListAvailable -Name PSWSMan
-Install-Module PSWSMan -Force
+# Enable-PSRemoting -Force
+# Get-Module -ListAvailable -Name PSWSMan
+# Install-Module PSWSMan -Force
 
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
