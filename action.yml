@@ -20,7 +20,7 @@ inputs:
     description: 'The service account password'
     required: true
 
-runs-on: unbuntu-latest
+runs-on: windows-latest
 runs:
   using: 'composite'
   steps:

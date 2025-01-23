@@ -11,7 +11,7 @@ Param(
     [parameter(Mandatory = $true)]
     [SecureString]$password
 )
-Import-Module Microsoft.PowerShell.Core
+
 Enable-PSRemoting -Force
 Get-Module -ListAvailable -Name PSWSMan
 Install-Module PSWSMan -Force
