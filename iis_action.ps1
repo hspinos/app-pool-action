@@ -16,6 +16,13 @@ Param(
 # Get-Module -ListAvailable -Name PSWSMan
 # Install-Module PSWSMan -Force
 
+Get-WindowsFeature -Name WinRM
+Enable-PSRemoting -Force
+Get-Service -Name WinRM
+  
+     
+     
+
 $display_action = 'App Pool'
 $title_verb = (Get-Culture).TextInfo.ToTitleCase($action)
 
