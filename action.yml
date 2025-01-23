@@ -28,7 +28,6 @@ runs:
       id: action
       shell: pwsh
       run: |
-        pwsh -Command "Enable-PSRemoting -Force"
         $password_string = @'
         ${{ inputs.service-account-password }}
         '@
