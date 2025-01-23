@@ -19,6 +19,7 @@ inputs:
   service-account-password:
     description: 'The service account password'
     required: true
+
 runs-on: unbuntu-latest
 runs:
   using: 'composite'
@@ -27,6 +28,7 @@ runs:
       id: action
       shell: pwsh
       run: |
+        pwsh -Command "Enable-PSRemoting -Force"
         $password_string = @'
         ${{ inputs.service-account-password }}
         '@
