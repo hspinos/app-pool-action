@@ -16,7 +16,7 @@ inputs:
   service-account-id:
     description: 'The service account name'
     required: true
-  service-account-password:
+  service_account_password:
     description: 'The service account password'
     required: true
     
@@ -28,7 +28,7 @@ runs:
       id: action
       shell: pwsh
       run: |
-        $password_string = $env:INPUT_SERVICE-ACCOUNT-PASSWORD
+        $password_string = $env:INPUT_SERVICE_ACCOUNT_PASSWORD
         # $password_string = "${{ inputs.service-account-password }}"
         $secure_password = ConvertTo-SecureString -String $password_string -AsPlainText -Force
         ${{ github.action_path }}/iis_action.ps1 `
