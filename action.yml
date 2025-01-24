@@ -29,7 +29,7 @@ runs:
       shell: pwsh
       run: |
         $password_string = @'
-        ${{ inputs.service-account-password }}
+        "${{ inputs.service-account-password }}"
         '@
         $secure_password = ConvertTo-SecureString -String $password_string -AsPlainText -Force
         ${{ github.action_path }}/iis_action.ps1 `
