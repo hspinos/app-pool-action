@@ -28,7 +28,8 @@ runs:
       id: action
       shell: pwsh
       run: |
-        $password_string = "${{ inputs.service-account-password }}"
+        $password_string = $env:INPUT_SERVICE-ACCOUNT-PASSWORD
+        # $password_string = "${{ inputs.service-account-password }}"
         $secure_password = ConvertTo-SecureString -String $password_string -AsPlainText -Force
         ${{ github.action_path }}/iis_action.ps1 `
           -action "${{ inputs.action }}".ToLower() `
