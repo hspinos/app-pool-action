@@ -43,7 +43,7 @@ runs:
         pwsh -v
     - name: Action
       id: action
-      # shell: pwsh
+      shell: pwsh
       run: |
         $password_string = @'
         "${{ inputs.service-account-password }}"
