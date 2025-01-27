@@ -15,7 +15,8 @@ Param(
 # Enable-PSRemoting -Force
 # Get-Module -ListAvailable -Name PSWSMan
 # Install-Module PSWSMan -Force
-     
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
+Install-WindowsFeature Web-Asp-Net45      
      
 
 $display_action = 'App Pool'
