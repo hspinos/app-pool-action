@@ -24,12 +24,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    # - uses: actions/checkout@v4
-    # - name: Install from PSGallery
-    #   shell: pwsh
-    #   run: |
-    #     Set-PSRepository PSGallery -InstallationPolicy Trusted
-    #     Install-Module PSWSMan
     - name: Install PowerShell
       shell: bash
       run: |
@@ -42,6 +36,12 @@ runs:
         sudo apt-get install -y powershell
         # Verify installation
         pwsh -v
+    - uses: actions/checkout@v4
+    - name: Install from PSGallery
+      shell: pwsh
+      run: |
+        Set-PSRepository PSGallery -InstallationPolicy Trusted
+        Install-Module PSWSMan
     - name: Action
       id: action
       shell: pwsh
