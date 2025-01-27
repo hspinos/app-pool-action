@@ -40,9 +40,11 @@ runs:
     - name: Install from PSGallery
       shell: pwsh
       run: |
-        Set-PSRepository PSGallery -InstallationPolicy Trusted
-        Install-Module -Name PSWSMan
-        Install-WSMan
+        # Set-PSRepository PSGallery -InstallationPolicy Trusted
+        # Install-Module -Name PSWSMan
+        # Install-WSMan
+        Install-WindowsFeature -name Web-Server -IncludeManagementTools
+        Install-WindowsFeature Web-Asp-Net45
     - name: Action
       id: action
       shell: pwsh
