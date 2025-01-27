@@ -43,8 +43,9 @@ runs:
         # Set-PSRepository PSGallery -InstallationPolicy Trusted
         # Install-Module -Name PSWSMan
         # Install-WSMan
-        Install-WindowsFeature -name Web-Server -IncludeManagementTools
-        Install-WindowsFeature Web-Asp-Net45
+        # Install-WindowsFeature -name Web-Server -IncludeManagementTools
+        # Install-WindowsFeature Web-Asp-Net45
+        Install-Module -Name WebAdministration -Force
     - name: Action
       id: action
       shell: pwsh
