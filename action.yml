@@ -30,7 +30,6 @@ runs:
     #   run: |
     #     Set-PSRepository PSGallery -InstallationPolicy Trusted
     #     Install-Module PSWSMan
-    - 
     - name: Action
       id: action
       shell: pwsh
