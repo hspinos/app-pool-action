@@ -37,5 +37,5 @@ runs:
           -action "${{ inputs.action }}".ToLower() `
           -server ${{ inputs.server }} `
           -app_pool_name '${{ inputs.app-pool-name }}' `
-          -user_id '${{ inputs.service-account-id }}' `
-          -password $secure_password
+          # -user_id '${{ inputs.service-account-id }}' `
+          # -password $secure_password
