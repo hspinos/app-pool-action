@@ -13,39 +13,18 @@ inputs:
   app-pool-name:
     description: 'IIS app pool name'
     required: true
-  service-account-id:
-    description: 'The service account name'
-    required: true
-  service-account-password:
-    description: 'The service account password'
-    required: true
+  # service-account-id:
+  #   description: 'The service account name'
+  #   required: true
+  # service-account-password:
+  #   description: 'The service account password'
+  #   required: true
     
 
 runs:
   using: 'composite'
   steps:
-    - name: Install PowerShell
-      shell: bash
-      run: |
-        # Download and install PowerShell
-        sudo apt-get update
-        sudo apt-get install -y wget apt-transport-https software-properties-common
-        wget -q https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb
-        sudo dpkg -i packages-microsoft-prod.deb
-        sudo apt-get update
-        sudo apt-get install -y powershell
-        # Verify installation
-        pwsh -v
-    - uses: actions/checkout@v4
-    - name: Install from PSGallery
-      shell: pwsh
-      run: |
-        Set-PSRepository PSGallery -InstallationPolicy Trusted
-        # Install-Module -Name PSWSMan
-        # Install-WSMan
-        # Install-WindowsFeature -name Web-Server -IncludeManagementTools
-        # Install-WindowsFeature Web-Asp-Net45
-        Install-Module -Name WebAdministration -Force
+    
     - name: Action
       id: action
       shell: pwsh
